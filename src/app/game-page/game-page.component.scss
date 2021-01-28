@@ -1,17 +1,54 @@
-.grid{
+.grid {
     display: flex;
     flex-wrap: wrap;
     max-width: 400px;
-    margin: 0 auto 20px;
-}
-
-.cell{
+  }
+  
+  .cell {
+    position: relative;
     flex-basis: 33%;
-    border: solid 1px #666;
-
-    &:before{
-        content: '';
-        display: block;
-        padding-top: 100%;
+    border: 1px solid #666;
+  
+    &:before {
+      content: '';
+      display: block;
+      padding-top: 100%;
     }
-}
+  }
+  
+  .circle, .cross {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+  }
+  
+  .circle {
+    position: absolute;
+    border: 2px solid blue;
+    border-radius: 50%;
+    width: 80%;
+    height: 80%;
+    top: 10%;
+    left: 10%
+  }
+  
+  .cross {
+    top: 50%;
+  
+    &:before, &:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: #F66;
+    }
+  
+    &:before {
+      transform: rotate(45deg);
+    }
+  
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }  

@@ -5,15 +5,9 @@
     </div>
 
     <div class="grid">
-        <div *ngFor="let cell of grid" class="cell" (click)="clickOnCell(cell)">
-            <!-- solution 1
-            <div *ngIf="!cell.empty && cell.cross" class="cross"></div>
-            <div *ngIf="!cell.empty && cell.cross" class="circle"></div> -->
-            
-            <!-- solution 2 -->
-            <div *ngIf="!cell.empty" [class.cross]="cell.cross" 
-                [class.circle]="cell.circle"></div>
-        </div>
+
+        <app-cell *ngFor="let cell of grid" [cell]="cell" class="cell" (click)="clickOnCell(cell)" ></app-cell>
+        
     </div>
 
     <button type="button" class="btn btn-primary">

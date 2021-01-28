@@ -1,0 +1,17 @@
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 400px;
+    margin: 0 auto 20px;
+}
+
+.cell{
+    flex-basis: 33%;
+    border: solid 1px #666;
+
+    &:before{
+        content: '';
+        display: block;
+        padding-top: 100%;
+    }
+}

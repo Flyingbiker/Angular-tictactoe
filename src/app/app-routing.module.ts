@@ -5,10 +5,8 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  {
-    path: '/', component GamePageComponent,
-    path: '/params', component ParamPageComponent,
-  }
+  {path: '', component : GamePageComponent},
+  {path: 'params', component : ParamPageComponent},
 ];
 
 @NgModule({

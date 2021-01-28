@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GamePageComponent implements OnInit {
 
-  constructor() { }
+  public grid : Array<any> = [];
+
+  private gridSize = 9;
+
+  constructor() { 
+    for (let i = 0 ; i < this.gridSize ; i++){
+      this.grid.push(null);
+    }
+  }
 
   ngOnInit(): void {
   }

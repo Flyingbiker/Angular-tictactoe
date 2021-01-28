@@ -1,23 +1,13 @@
 <h2>Jeu</h2>
 <div class="text-center">
-    <div>
+    <div class="font-weight-bold text-danger">
         Tour de Cédric
     </div>
 
     <div class="grid">
-        <div class="cell">
-            <div class="cross"></div>
+        <div *ngFor="let cell of grid" class="cell" >
+            <div></div>
         </div>
-        <div class="cell">
-            <div class="circle"></div>
-        </div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
-        <div class="cell"></div>
     </div>
 
 

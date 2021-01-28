@@ -5,7 +5,7 @@
     </div>
 
     <div class="grid">
-        <div *ngFor="let cell of grid" class="cell" >
+        <div *ngFor="let cell of grid" class="cell" (click)="clickOnCell(cell)">
             <!-- solution 1
             <div *ngIf="!cell.empty && cell.cross" class="cross"></div>
             <div *ngIf="!cell.empty && cell.cross" class="circle"></div> -->
@@ -15,7 +15,6 @@
                 [class.circle]="cell.circle"></div>
         </div>
     </div>
-
 
     <button type="button" class="btn btn-primary">
         Recommencer la partie

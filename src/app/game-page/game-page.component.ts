@@ -25,4 +25,8 @@ export class GamePageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public clickOnCell(cellule : Cell): void {
+    cellule.empty = false;
+    cellule.cross= true;
+  }
 }

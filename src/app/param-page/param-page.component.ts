@@ -21,6 +21,7 @@ export class ParamPageComponent implements OnInit {
   }
 
   public submit(){
+    console.log(this.players);
     
   }
 

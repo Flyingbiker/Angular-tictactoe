@@ -3,11 +3,26 @@
 
     <!-- #configForm =  création d'une variable que pour l'HTML (comme un private)
     ça renvoit l'objet JS qui est lié à la balise -->
-    <form (ngSubmit)="submit()" #configForm=ngForm >
-        <div *ngFor="let player of players; let playerIndex = index" class="form-group">
+    <form #configForm="ngForm" (ngSubmit)="submit()"  >
+        <div *ngFor="let player of players; let playerIndex = index" 
+             class="form-group"
+        >
             <label for="'player-'+ playerIndex">Player {{playerIndex + 1}} name</label>
-            <input type="text" class="form-control" id="'player-'+ playerIndex"
-            [(ngModel)]="player.name" name="players[]">
+            <input  type="text" 
+                    class="form-control" 
+                    id="'player-'+ playerIndex"
+                    [(ngModel)]="player.name" 
+                    [name]="'player-'+ playerIndex"
+                    minlength="3"
+                    maxlength="20"
+                    #playerInput="ngModel"
+            >
+            <small *ngIf="playerInput.invalid && playerInput.value.length < 3" class="form-text text-danger">
+                Veuillez saisir un nom pour le joueur avec au moins 3 caractères
+            </small>
+            <small *ngIf="!playerInput.valid  && playerInput.value.length > 20" class="form-text text-danger">
+                Veuillez saisir un nom pour le joueur avec au plus 20 caractères
+            </small>
             <p>{{player.name}}</p>
         </div>
         

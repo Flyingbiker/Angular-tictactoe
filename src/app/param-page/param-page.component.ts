@@ -1,3 +1,4 @@
+import { ParamsService } from './../params.service';
 import { Player } from './../player';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,7 +13,7 @@ export class ParamPageComponent implements OnInit {
 
   private playerCounter = 2;
 
-  constructor() { 
+  constructor(private paramsService : ParamsService) { 
     for (let i = 0; i< this.playerCounter; i++){
       this.players.push(
         {name :'',}

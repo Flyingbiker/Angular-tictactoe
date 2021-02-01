@@ -1,8 +1,16 @@
 <div class="container">
     <h2 class="text-center mb-4">Paramètrage de la partie</h2>
 
-    <div *ngFor="let player of players; let playerIndex = index" class="form-group">
-        <label for="'player-'+ playerIndex">Player {{playerIndex + 1}} name</label>
-        <input type="text" class="form-control" id="'player-'+ playerIndex">
-    </div>
+    <!-- #configForm =  création d'une variable que pour l'HTML (comme un private)
+    ça renvoit l'objet JS qui est lié à la balise -->
+    <form (ngSubmit)="submit()" #configForm=ngForm >
+        <div *ngFor="let player of players; let playerIndex = index" class="form-group">
+            <label for="'player-'+ playerIndex">Player {{playerIndex + 1}} name</label>
+            <input type="text" class="form-control" id="'player-'+ playerIndex"
+            [(ngModel)]="player.name" name="players[]">
+            <p>{{player.name}}</p>
+        </div>
+        
+        <button type="submit" class="btn btn-success">Save</button>
+    </form>
 </div>

@@ -1,3 +1,4 @@
+import { Player } from './../player';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,17 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParamPageComponent implements OnInit {
 
-  public players : Array<any> = [];
+  public players : Array<Player> = [];
 
   private playerCounter = 2;
 
   constructor() { 
     for (let i = 0; i< this.playerCounter; i++){
-      this.players.push(null);
+      this.players.push(
+        {name :'',}
+      );
     }
+  }
+
+  public submit(){
+    
   }
 
   ngOnInit(): void {
   }
+
+  
 
 }

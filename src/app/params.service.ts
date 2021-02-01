@@ -18,7 +18,7 @@ export class ParamsService {
     }
   }
 
-  public updatePalyers(players : Array<Player>):void {
+  public updatePlayers(players : Array<Player>):void {
     this.players = players.map((player: Player)=> {
       return Object.assign({}, player);
     });

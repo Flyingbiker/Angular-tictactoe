@@ -10,22 +10,21 @@ import { Component, OnInit } from '@angular/core';
 export class ParamPageComponent implements OnInit {
 
   public players : Array<Player> = [];
+  
   constructor(private paramsService : ParamsService) { 
     this.players = this.paramsService.copyPlayers();
   }
 
-  // et le getter est appelé par le ngfor dans le HTML (d'où le même nom)
+  // et le getter est appelé par le ngFor dans le HTML (d'où le même nom)
   // où le faire comme j'avais l'habitude de le faire 
-  // (déclaration varaible + assignation dans la constructeur)
+  // (déclaration varaible + assignation dans le constructeur)
   
   public submit():void{
-    // this.paramsService.copyPlayers
+    this.paramsService.updatePlayers(this.players);
   }
 
   ngOnInit(): void {
     
   }
-
-  
 
 }

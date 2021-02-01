@@ -1,3 +1,4 @@
+import { ParamsService } from './../params.service';
 import { Cell } from './../cell.d';
 import { Component, OnInit } from '@angular/core';
 
@@ -12,7 +13,7 @@ export class GamePageComponent implements OnInit {
 
   private gridSize = 9;
 
-  constructor() { 
+  constructor( private paramsService :ParamsService) { 
     for (let i = 0 ; i < this.gridSize ; i++){
       this.grid.push({
         empty: true,

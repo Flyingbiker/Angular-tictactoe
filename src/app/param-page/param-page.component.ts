@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParamPageComponent implements OnInit {
 
-  constructor() { }
+  public players : Array<any> = [];
+
+  private playerCounter = 2;
+
+  constructor() { 
+    for (let i = 0; i< this.playerCounter; i++){
+      this.players.push(null);
+    }
+  }
 
   ngOnInit(): void {
   }

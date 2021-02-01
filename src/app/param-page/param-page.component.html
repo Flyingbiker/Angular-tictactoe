@@ -1,4 +1,8 @@
 <div class="container">
     <h2 class="text-center mb-4">Paramètrage de la partie</h2>
 
+    <div *ngFor="let player of players; let playerIndex = index" class="form-group">
+        <label for="'player-'+ playerIndex">Player {{playerIndex + 1}} name</label>
+        <input type="text" class="form-control" id="'player-'+ playerIndex">
+    </div>
 </div>
